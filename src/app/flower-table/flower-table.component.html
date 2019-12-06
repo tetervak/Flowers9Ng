@@ -2,7 +2,7 @@
 <table>
   <tr *ngFor="let f of flowers">
     <td>
-      <a routerLink="{{f.id}}">
+      <a [routerLink]="['flowers',f.id]">
         <img class="thumb"
              [src]="f.smallImgSrc" [alt]="f.label">
       </a>

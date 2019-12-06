@@ -6,7 +6,13 @@ import {FlowerDataService} from './flower-data.service';
 import {FooterModule} from './footer/footer.module';
 import {HttpClientModule} from '@angular/common/http';
 import { FlowerTableComponent } from './flower-table/flower-table.component';
-import {routing} from './app.routing';
+import {RouterModule, Routes} from '@angular/router';
+
+const routes: Routes = [
+  {path: '', component: FlowerTableComponent},
+  {path: 'flowers/:id', component: FlowerDetailsComponent},
+  {path: '**', redirectTo: ''}
+];
 
 @NgModule({
   declarations: [
@@ -18,7 +24,7 @@ import {routing} from './app.routing';
     BrowserModule,
     HttpClientModule,
     FooterModule,
-    routing
+    RouterModule.forRoot(routes)
   ],
   providers: [FlowerDataService],
   bootstrap: [AppComponent]

@@ -19,10 +19,10 @@ export class FlowerDetailsComponent implements OnInit {
     this.flowers = [];
   }
   ngOnInit(): void {
-    this.flowerDataService.getFlowerData().subscribe(flowers => {
-      this.flowers = flowers;
-      this.activatedRoute.paramMap.subscribe(paramMap => {
-        const id = paramMap.get('id');
+    this.activatedRoute.paramMap.subscribe(params => {
+      const id = params.get('id');
+      this.flowerDataService.getFlowerData().subscribe(flowers => {
+        this.flowers = flowers;
         this.flower = this.flowers[id];
       });
     });

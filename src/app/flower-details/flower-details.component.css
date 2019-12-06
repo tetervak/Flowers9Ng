@@ -21,3 +21,8 @@ img.flower_image{
 .text_box{
   width: 300px;
 }
+
+a{
+  color: limegreen;
+  font-weight: bolder;
+}

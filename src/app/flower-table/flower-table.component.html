@@ -2,8 +2,10 @@
 <table>
   <tr *ngFor="let f of flowers">
     <td>
-      <img class="thumb"
-           [src]="f.smallImgSrc" [alt]="f.label">
+      <a routerLink="{{f.id}}">
+        <img class="thumb"
+             [src]="f.smallImgSrc" [alt]="f.label">
+      </a>
     </td>
     <td>
       <span class="flower_label">{{f.label}}</span>&nbsp;&nbsp;

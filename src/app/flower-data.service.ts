@@ -49,15 +49,6 @@ export class FlowerDataService {
     items.forEach(
       (item: FlowerCatalogItem, index: number) =>
         this.flowers.push(FlowerDataService.item2Flower(index, item)));
-    this.preloadLargeImages();
     this.flowerData.next(this.flowers);
-  }
-  // preload the large images from the server
-  private preloadLargeImages() {
-    this.flowers.forEach(flower => {
-      const image: HTMLImageElement = new Image();
-      image.src = flower.largeImgSrc;
-      this.largeImages.push(image);
-    });
   }
 }
